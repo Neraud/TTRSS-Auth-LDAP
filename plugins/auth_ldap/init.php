@@ -220,9 +220,10 @@ class Auth_Ldap extends Auth_Base {
      * Required for plugin interface 
      * @param string $login  User's username
      * @param string $password User's password
+	 * @param string $service
      * @return boolean
      */
-    function authenticate($login, $password) {
+    function authenticate($login, $password, $service = '') {
         if ($login && $password) {
 
             if (!function_exists('ldap_connect')) {
